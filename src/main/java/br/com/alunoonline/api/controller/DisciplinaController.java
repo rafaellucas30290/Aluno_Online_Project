@@ -5,9 +5,12 @@ import br.com.alunoonline.api.service.DisciplinaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import br.com.alunoonline.api.model.Professor;
 
 import java.util.List;
 import java.util.Optional;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/disciplinas")
@@ -43,6 +46,11 @@ public class DisciplinaController {
         disciplinaService.atualizarDisciplinaporId(id, disciplina);
     }
 
+    @GetMapping("/professores/id")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Disciplina> buscarDisciplinasPorProfessor(Long professorId){
+        return disciplinaService.listarTodasDisciplinasPorProfessor(professorId);
+    }
 
 
 }

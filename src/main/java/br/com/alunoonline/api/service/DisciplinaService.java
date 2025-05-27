@@ -6,9 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.stereotype.Service;
+import br.com.alunoonline.api.model.Professor;
 
 import java.util.List;
 import java.util.Optional;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @Service
 public class DisciplinaService {
     @Autowired
@@ -41,6 +45,10 @@ public class DisciplinaService {
         disciplinaEditar.setProfessor(disciplina.getProfessor());
 
         disciplinaRepository.save(disciplinaEditar);
+    }
+
+    public List<Disciplina> listarTodasDisciplinasPorProfessor(Long professorId) {
+        return disciplinaRepository.findByProfessorId(professorId);
     }
 
 

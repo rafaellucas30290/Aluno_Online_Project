@@ -40,7 +40,7 @@ public class AlunoController {
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizarAluno(@PathVariable Long id,
-                               @RequestBody Aluno aluno) {
+                                @RequestBody Aluno aluno) {
         alunoService.atualizarAlunoPorId(id, aluno);
 
     }
