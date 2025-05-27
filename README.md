@@ -22,3 +22,10 @@ Print AtualizarAluno:
 ![](https://i.imgur.com/77aZSZ9.png)
 ![](https://i.imgur.com/qRJg4Qh.png)
 ![](https://i.imgur.com/WDSxVd0.png)
+# Prints Insomnia Matricula
+Criar Matricula:
+![](https://i.imgur.com/PqZVo01.png)
+Trancar Matricula:
+![](https://i.imgur.com/SIaEEaF.png)
+Tabela Matriculas no Dbeaver:
+![](https://i.imgur.com/ifsmAWF.png)
