@@ -1,31 +1,91 @@
-# Aluno_Online_Project
-#  Prints Insomnia Aluno
-![Print 1 - Insomnia](https://i.imgur.com/6F2dX8K.png)
-![Print 2 - Tabela Aluno](https://i.imgur.com/2zxaOu5.png)
-Print listarTodosAlunos:
-![Print listarTodos](https://i.imgur.com/iuZ723Y.png)
-Print listarAlunosPorId
-![Print listarPorId ](https://i.imgur.com/4Jj7RyM.png)
-Print DeleteAluno:
-![Print DeleteAluno](https://i.imgur.com/yHyEjy9.png)
-Print AtualizarAluno:
-![Print AtualizarAluno](https://i.imgur.com/Nh1bLuP.png)
-# Prints Insomnia Professor
-![](https://i.imgur.com/Tl4LM36.png)
-![](https://i.imgur.com/mvA9UXV.png)
-![](https://i.imgur.com/oZhsuYz.png)
-![](https://i.imgur.com/ZHamsZi.png)
-![](https://i.imgur.com/okjlcW0.png)
-# Prints Insomnia Disciplina
-![](https://i.imgur.com/oGxq7ZS.png)
-![](https://i.imgur.com/ElZf1k0.png)
-![](https://i.imgur.com/77aZSZ9.png)
-![](https://i.imgur.com/qRJg4Qh.png)
-![](https://i.imgur.com/WDSxVd0.png)
-# Prints Insomnia Matricula
-Criar Matricula:
-![](https://i.imgur.com/PqZVo01.png)
-Trancar Matricula:
-![](https://i.imgur.com/SIaEEaF.png)
-Tabela Matriculas no Dbeaver:
-![](https://i.imgur.com/ifsmAWF.png)
+# 🎓 API de Gestão de Matrículas de Alunos
+
+Esta é uma API RESTful desenvolvida em **Java com Spring Boot** para gerenciamento de **alunos, disciplinas e matrículas**, permitindo cadastro, consulta de histórico e controle de notas.
+
+---
+
+## 📚 Funcionalidades
+
+- ✅ Cadastro de alunos
+- ✅ Cadastro de disciplinas
+- ✅ Matrícula de alunos em disciplinas
+- ✅ Lançamento de notas
+- ✅ Geração de histórico escolar do aluno
+- ✅ Cálculo de média e status (Aprovado/Reprovado)
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- Java 17+
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+- PostgreSQL (ou o banco que estiver usando)
+- Lombok
+- DBeaver (para gerenciar o banco)
+
+---
+
+## 🚀 Como executar o projeto
+
+### Pré-requisitos
+
+- [Java 17+](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Maven](https://maven.apache.org/)
+- [PostgreSQL](https://www.postgresql.org/) (ou outro banco compatível)
+- [DBeaver](https://dbeaver.io/) (opcional, para visualizar o banco)
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+cd nome-do-repositorio
+```
+
+### 2. Configure no Banco de Dados
+
+No arquivo **src/main/resources/application.properties**:
+
+```bash
+spring.datasource.url=jdbc:postgresql://localhost:5432/alunosdb
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
+spring.jpa.hibernate.ddl-auto=update
+```
+
+💡 Você também pode importar o arquivo dump.sql localizado em src/main/resources/db/dump.sql para popular o banco com dados.
+
+### 3. Execute a aplicação
+
+```bash
+./mvnw spring-boot:run
+```
+
+💡 Também pode ser executado pelo main.java
+
+A API será executada em: http://localhost:8080
+
+---
+
+## 🧠 Organização do Projeto
+
+<pre><code>src/
+  ├── main/ 
+  │ ├── java/ 
+  │ │     └── br/ 
+  │ │        └── com/ 
+  │ │             └── alunoonline/ 
+  │ │                       └── api/ 
+  │ │                            ├── controller/ 
+  │ │                            ├── service/
+  │ │                            ├── repository/ 
+  │ │                            ├── model/  
+  │ │                            └── dto/ 
+  │ └── resources/ 
+  │     ├── application.properties        # Configuração da aplicação 
+  │     ├──  db/ 
+  │     │      └── dump.sql # Backup do banco de dados
+  │     └── insomnia
+  │            └── Insomnia_2025-05-27.yaml # Collection do Insomnia
+  └── test/ </code></pre>
